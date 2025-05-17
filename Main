@@ -3,5 +3,27 @@ def add_expense(expense,amount, category):
 
 def main():
     expense = []
+    while True:
+        print(f'\nExpense Tracker\n1. Add Expense\n2. List All Expense\n3. Total Expense\n4. Filter expense by category\n5. Exiting the Program')
+        choice = input('Enter your chioce: ')
+
+        if choice == '1':
+            amount = float(input('Enter Amount'))
+            category = input('Enter Category')
+            add_expense(expense,amount,category)
+
+        elif choice == '2':
+            pass
+
+        elif choice == '3':
+            pass
+
+        elif choice == '4':
+            pass
+
+        elif choice == '5':
+            print('Exiting the Program')
+            break
+
     
 main()
