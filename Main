@@ -1,0 +1,7 @@
+def add_expense(expense,amount, category):
+    expense.appedd({'amount': amount, 'category': category})
+
+def main():
+    expense = []
+    
+main()
