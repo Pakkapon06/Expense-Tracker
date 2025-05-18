@@ -1,2 +1,3 @@
 # Expense-Tracker
-# function : Add Expense, List All Expense, Total Expense, Filter category
+# function : 
+Add Expense, List All Expense, Total Expense, Filter category
