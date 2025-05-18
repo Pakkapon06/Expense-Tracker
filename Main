@@ -1,13 +1,16 @@
 def add_expense(expense,amount, category):
     expense.append({'amount': amount, 'category': category})
 
+def total_expense(expense,amount):
+    return sum(map( lambda expense:expense['amount'] , expense))
+
 def main():
     expense = []
     while True:
         print(f'\nExpense Tracker\n1. Add Expense\n2. List All Expense\n3. Total Expense\n4. Filter expense by category\n5. Exiting the Program')
         choice = int(input('Enter you choice: '))
 
-        if choice == 1:
+        if choice == 1:     
             amount = float(input('Enter Amount: '))
             category = input('Enter Category: ')
             add_expense(expense,amount,category)
@@ -18,13 +21,14 @@ def main():
                 print(f'Amount: {i['amount']} , Category: {i['category']}')
             
         
-        if choice == '3':
+        if choice == 3:
+            total = total_expense(expense,amount)
+            print(f'\nTotal Expense: {total}')
+        
+        if choice == 4:
             pass
         
-        if choice == '4':
-            pass
-        
-        if choice == '5':
+        if choice == 5:
             print('Exiting The Program')
             break
 
