@@ -1,17 +1,22 @@
 def add_expense(expense,amount, category):
-    expense.appedd({'amount': amount, 'category': category})
+    expense.append({'amount': amount, 'category': category})
 
 def main():
     expense = []
     while True:
-        print(f'Expense Tracker\n1. Add Expense\n2. List All Expense\n3. Total Expense\n4. Filter expense by category\n5. Exiting the Program')
-        choice = int(input('Enter you choice'))
+        print(f'\nExpense Tracker\n1. Add Expense\n2. List All Expense\n3. Total Expense\n4. Filter expense by category\n5. Exiting the Program')
+        choice = int(input('Enter you choice: '))
 
-        if choice == '1':
-            pass
+        if choice == 1:
+            amount = float(input('Enter Amount: '))
+            category = input('Enter Category: ')
+            add_expense(expense,amount,category)
 
-        if choice == '2':
-            pass
+        if choice == 2:
+            print('\nAll Expense:')
+            for i in expense:
+                print(f'Amount: {i['amount']} , Category: {i['category']}')
+            
         
         if choice == '3':
             pass
