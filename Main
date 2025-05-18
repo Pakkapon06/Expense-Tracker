@@ -1,8 +1,11 @@
 def add_expense(expense,amount, category):
     expense.append({'amount': amount, 'category': category})
 
-def total_expense(expense,amount):
+def total_expense(expense):
     return sum(map( lambda expense:expense['amount'] , expense))
+
+def filter_by_category(expense,category):
+    return list(filter( lambda expense:expense['category'] == category , expense))
 
 def main():
     expense = []
@@ -22,11 +25,14 @@ def main():
             
         
         if choice == 3:
-            total = total_expense(expense,amount)
-            print(f'\nTotal Expense: {total}')
+            print(f'\nTotal Expense: {total_expense(expense)}')
         
         if choice == 4:
-            pass
+            category = input('Enter category to filter: ')
+            print(f'\nExpense for {category}')
+            filtered = filter_by_category(expense,category)
+            for i in filtered:
+                print(f'Amount: {i['amount']} , Category: {i['category']}')
         
         if choice == 5:
             print('Exiting The Program')
